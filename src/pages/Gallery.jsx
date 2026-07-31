@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { galleryData } from '../data/churchData';
 import { ChevronLeft, ChevronRight, X, ZoomIn } from 'lucide-react';
-import heroImg from '../assets/about_gathering.png';
+import heroImg from '../assets/about ihema.jpg';
 
 export default function Gallery() {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -88,7 +88,11 @@ export default function Gallery() {
           </div>
 
           {/* Grid Layout */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.5rem' }}>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+            gap: '1.75rem'
+          }}>
             {displayItems.map((item, idx) => (
               <div
                 key={item.id}
@@ -99,16 +103,24 @@ export default function Gallery() {
                   cursor: 'pointer',
                   position: 'relative',
                   aspectRatio: '4/3',
-                  borderRadius: '8px'
+                  borderRadius: '8px',
+                  border: '1px solid rgba(230, 200, 117, 0.25)',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
                 }}
               >
                 <img
                   src={item.url}
                   alt={item.title}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.3s ease' }}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    display: 'block',
+                    transition: 'transform 0.4s ease'
+                  }}
                   className="gallery-img"
                 />
-                
+
                 {/* Overlay hover details */}
                 <div
                   style={{
@@ -118,20 +130,20 @@ export default function Gallery() {
                     right: 0,
                     bottom: 0,
                     backgroundColor: 'rgba(7, 11, 22, 0.75)',
+                    backdropFilter: 'blur(4px)',
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
                     justifyContent: 'center',
                     opacity: 0,
-                    transition: 'opacity 0.3s',
-                    padding: '1.5rem',
-                    textAlign: 'center'
+                    transition: 'opacity 0.3s ease'
                   }}
                   className="gallery-overlay"
                 >
-                  <ZoomIn size={24} className="text-gold" style={{ marginBottom: '0.5rem' }} />
-                  <h4 style={{ color: 'var(--text-light)', fontFamily: 'var(--font-serif)', fontSize: '1.25rem', marginBottom: '0.25rem' }}>{item.title}</h4>
-                  <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--accent-gold)' }}>{item.category}</span>
+                  <ZoomIn size={32} className="text-gold" style={{ marginBottom: '0.5rem' }} />
+                  <span style={{ fontSize: '0.85rem', color: 'var(--text-light)', textAlign: 'center', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                    {item.category}
+                  </span>
                 </div>
               </div>
             ))}

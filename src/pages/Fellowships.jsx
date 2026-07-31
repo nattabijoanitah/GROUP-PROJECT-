@@ -2,7 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { fellowshipsData } from '../data/churchData';
 import { Calendar, User, BookOpen, Compass, CheckCircle2, ChevronRight } from 'lucide-react';
-import heroImg from '../assets/about_gathering.png';
+import menMinistryImg from '../assets/men ministry.png';
+import womensMinistryImg from '../assets/womens ministry.png';
+import youthMinistryImg from '../assets/youth ministry.png';
+import childrenMinistryImg from '../assets/children ministry.png';
+
+const fellowshipHeroImages = {
+  men: menMinistryImg,
+  women: womensMinistryImg,
+  youth: youthMinistryImg,
+  children: childrenMinistryImg
+};
 
 export default function Fellowships() {
   const { type } = useParams();
@@ -45,6 +55,8 @@ export default function Fellowships() {
   };
 
   if (!data) return <div style={{ paddingTop: '100px', textAlign: 'center' }}>Loading Fellowship Details...</div>;
+
+  const heroImg = fellowshipHeroImages[type] || fellowshipHeroImages.youth;
 
   return (
     <div className="fade-in" style={{ paddingTop: '80px' }}>

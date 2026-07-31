@@ -15,7 +15,6 @@ export default function SermonPlayer({ sermon }) {
 
   const activeRef = mediaType === 'video' ? videoRef : audioRef;
 
-  // Toggle Play / Pause
   const togglePlay = () => {
     const media = activeRef.current;
     if (!media) return;
@@ -23,7 +22,6 @@ export default function SermonPlayer({ sermon }) {
     if (isPlaying) {
       media.pause();
     } else {
-      // Pause the other media if switching
       if (mediaType === 'audio' && videoRef.current) videoRef.current.pause();
       if (mediaType === 'video' && audioRef.current) audioRef.current.pause();
       media.play().catch(err => console.log('Playback error:', err));
@@ -31,7 +29,6 @@ export default function SermonPlayer({ sermon }) {
     setIsPlaying(!isPlaying);
   };
 
-  // Sync state on change of sermon or media type
   useEffect(() => {
     setIsPlaying(false);
     setCurrentTime(0);
@@ -46,7 +43,6 @@ export default function SermonPlayer({ sermon }) {
     }
   }, [sermon, mediaType]);
 
-  // Set duration when metadata loads
   const handleLoadedMetadata = () => {
     const media = activeRef.current;
     if (media) {
@@ -54,7 +50,6 @@ export default function SermonPlayer({ sermon }) {
     }
   };
 
-  // Update current time on play progress
   const handleTimeUpdate = () => {
     const media = activeRef.current;
     if (media) {
@@ -62,7 +57,6 @@ export default function SermonPlayer({ sermon }) {
     }
   };
 
-  // Format time (e.g. 03:45)
   const formatTime = (time) => {
     if (isNaN(time)) return '0:00';
     const minutes = Math.floor(time / 60);
@@ -70,7 +64,6 @@ export default function SermonPlayer({ sermon }) {
     return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
   };
 
-  // Handle progress bar click
   const handleSeek = (e) => {
     const seekTime = parseFloat(e.target.value);
     const media = activeRef.current;
@@ -80,7 +73,6 @@ export default function SermonPlayer({ sermon }) {
     }
   };
 
-  // Handle volume change
   const handleVolumeChange = (e) => {
     const vol = parseFloat(e.target.value);
     setVolume(vol);
@@ -92,7 +84,6 @@ export default function SermonPlayer({ sermon }) {
     }
   };
 
-  // Toggle Mute
   const toggleMute = () => {
     const newMute = !isMuted;
     setIsMuted(newMute);
@@ -103,7 +94,6 @@ export default function SermonPlayer({ sermon }) {
     }
   };
 
-  // Change playback speed
   const changeSpeed = () => {
     const speeds = [1, 1.25, 1.5, 2];
     const currentIndex = speeds.indexOf(playbackRate);
@@ -116,7 +106,6 @@ export default function SermonPlayer({ sermon }) {
     }
   };
 
-  // Go back 10s
   const skipBackward = () => {
     const media = activeRef.current;
     if (media) {
@@ -124,7 +113,6 @@ export default function SermonPlayer({ sermon }) {
     }
   };
 
-  // Go forward 10s
   const skipForward = () => {
     const media = activeRef.current;
     if (media) {
@@ -132,13 +120,12 @@ export default function SermonPlayer({ sermon }) {
     }
   };
 
-  // Request fullscreen for video
   const requestFullScreen = () => {
     if (videoRef.current) {
       if (videoRef.current.requestFullscreen) {
         videoRef.current.requestFullscreen();
       } else if (videoRef.current.webkitRequestFullscreen) {
-        videoRef.current.webkitRequestFullscreen(); // Safari
+        videoRef.current.webkitRequestFullscreen();
       }
     }
   };
@@ -151,9 +138,35 @@ export default function SermonPlayer({ sermon }) {
     );
   }
 
+  // ─── YouTube sermons: render the embedded player and skip the custom console ───
+  if (sermon.youtubeId) {
+    return (
+      <div className="glass-card" style={{ overflow: 'hidden', padding: 0 }}>
+        <div style={{ position: 'relative', width: '100%', aspectRatio: '16/9', backgroundColor: '#000' }}>
+          <iframe
+            src={`https://www.youtube.com/embed/${sermon.youtubeId}`}
+            title={sermon.title}
+            style={{ width: '100%', height: '100%', border: 'none' }}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
+        </div>
+        <div style={{ padding: '1.25rem 1.5rem', backgroundColor: 'rgba(19, 28, 49, 0.95)' }}>
+          <span style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--text-light)', display: 'block' }}>
+            {sermon.title}
+          </span>
+          <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+            {sermon.preacher} • {sermon.scripture}
+          </span>
+        </div>
+      </div>
+    );
+  }
+
+  // ─── Fallback: original custom audio/video player for non-YouTube sermons ───
   return (
     <div className="glass-card" style={{ overflow: 'hidden', padding: 0 }}>
-      {/* Player Top Selector */}
       <div style={{ display: 'flex', borderBottom: '1px solid var(--border-color)', backgroundColor: 'rgba(0,0,0,0.2)' }}>
         <button
           onClick={() => setMediaType('audio')}
@@ -197,7 +210,6 @@ export default function SermonPlayer({ sermon }) {
         )}
       </div>
 
-      {/* Screen area */}
       <div style={{ position: 'relative', width: '100%', backgroundColor: '#000', display: 'flex', justifyContent: 'center', alignItems: 'center', aspectRatio: mediaType === 'video' ? '16/9' : '21/9' }}>
         {mediaType === 'video' ? (
           <video
@@ -225,7 +237,6 @@ export default function SermonPlayer({ sermon }) {
           </div>
         )}
 
-        {/* Overlay big play button when paused */}
         {!isPlaying && (
           <button
             onClick={togglePlay}
@@ -252,9 +263,7 @@ export default function SermonPlayer({ sermon }) {
         )}
       </div>
 
-      {/* Control Console */}
       <div style={{ padding: '1.5rem', backgroundColor: 'rgba(19, 28, 49, 0.95)' }}>
-        {/* Progress Bar */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
           <span style={{ fontSize: '0.8rem', width: '40px', textAlign: 'right', color: 'var(--text-muted)' }}>{formatTime(currentTime)}</span>
           <input
@@ -273,9 +282,7 @@ export default function SermonPlayer({ sermon }) {
           <span style={{ fontSize: '0.8rem', width: '40px', color: 'var(--text-muted)' }}>{formatTime(duration)}</span>
         </div>
 
-        {/* Main Controls row */}
         <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '1.5rem' }}>
-          {/* Skip buttons and Play/Pause */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
             <button onClick={skipBackward} style={{ background: 'none', border: 'none', color: 'var(--text-light)', cursor: 'pointer' }} title="Back 10s">
               <RotateCcw size={20} />
@@ -302,7 +309,6 @@ export default function SermonPlayer({ sermon }) {
             </button>
           </div>
 
-          {/* Title in center (Desktop only) */}
           <div style={{ display: 'none', flexDirection: 'column', flex: 1, paddingLeft: '1.5rem' }} className="console-title">
             <span style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--text-light)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: '300px' }}>
               {sermon.title}
@@ -312,9 +318,7 @@ export default function SermonPlayer({ sermon }) {
             </span>
           </div>
 
-          {/* Volume, Speed, and Fullscreen */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
-            {/* Speed Toggler */}
             <button
               onClick={changeSpeed}
               style={{
@@ -332,7 +336,6 @@ export default function SermonPlayer({ sermon }) {
               {playbackRate}x
             </button>
 
-            {/* Volume controls */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               <button onClick={toggleMute} style={{ background: 'none', border: 'none', color: 'var(--text-light)', cursor: 'pointer' }}>
                 {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
@@ -348,7 +351,6 @@ export default function SermonPlayer({ sermon }) {
               />
             </div>
 
-            {/* Maximize (only for Video) */}
             {mediaType === 'video' && (
               <button onClick={requestFullScreen} style={{ background: 'none', border: 'none', color: 'var(--text-light)', cursor: 'pointer' }} title="Full screen">
                 <Maximize2 size={20} />

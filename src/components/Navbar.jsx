@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, Heart, Flame } from 'lucide-react';
-import logoImg from '../assets/logo_gold.png';
+import logoImg from '../assets/ark2-removebg-preview.png';
+import menMinistryImg from '../assets/men ministry.png';
+import womensMinistryImg from '../assets/womens ministry.png';
+import childrenMinistryImg from '../assets/children ministry.png';
+import youthMinistryImg from '../assets/youth ministry.png';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [scrolled, setScrolled] = useState(false);
+  const [hoveredFellowship, setHoveredFellowship] = useState(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -51,10 +56,10 @@ export default function Navbar() {
       name: 'Fellowships',
       path: '#',
       dropdown: [
-        { name: 'Men\'s Fellowship', path: '/fellowships/men' },
-        { name: 'Women\'s Fellowship', path: '/fellowships/women' },
-        { name: 'Youth Fellowship', path: '/fellowships/youth' },
-        { name: 'Children\'s Fellowship', path: '/fellowships/children' }
+        { name: 'Men\'s Fellowship', path: '/fellowships/men', img: menMinistryImg },
+        { name: 'Women\'s Fellowship', path: '/fellowships/women', img: womensMinistryImg },
+        { name: 'Youth Fellowship', path: '/fellowships/youth', img: youthMinistryImg },
+        { name: 'Children\'s Fellowship', path: '/fellowships/children', img: childrenMinistryImg }
       ]
     },
     { name: 'Sermons', path: '/sermons' },
@@ -148,15 +153,37 @@ export default function Navbar() {
                         <Link
                           key={sIdx}
                           to={sub.path}
-                          style={{
+                          style={sub.img ? {
+                            padding: '1rem 1.25rem',
+                            fontSize: '0.85rem',
+                            fontWeight: 600,
+                            transition: 'all 0.15s',
+                            borderLeft: '2px solid transparent',
+                            minHeight: '56px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            ...(hoveredFellowship === sIdx
+                              ? {
+                                  backgroundImage: `linear-gradient(rgba(11, 17, 32, 0.35), rgba(11, 17, 32, 0.75)), url(${sub.img})`,
+                                  backgroundSize: 'cover',
+                                  backgroundPosition: 'center',
+                                  color: '#fff'
+                                }
+                              : { color: 'var(--text-light)' })
+                          } : {
                             padding: '0.65rem 1.25rem',
                             fontSize: '0.85rem',
                             color: 'var(--text-light)',
                             transition: 'all 0.2s',
                             borderLeft: '2px solid transparent'
                           }}
-                          className="dropdown-link"
+                          className={sub.img ? '' : 'dropdown-link'}
                           onClick={() => setActiveDropdown(null)}
+                          onMouseEnter={sub.img ? () => setHoveredFellowship(sIdx) : undefined}
+                          onMouseLeave={sub.img ? () => setHoveredFellowship(null) : undefined}
+                          onTouchStart={sub.img ? () => setHoveredFellowship(sIdx) : undefined}
+                          onFocus={sub.img ? () => setHoveredFellowship(sIdx) : undefined}
+                          onBlur={sub.img ? () => setHoveredFellowship(null) : undefined}
                         >
                           {sub.name}
                         </Link>
@@ -257,12 +284,31 @@ export default function Navbar() {
                         <Link
                           key={sIdx}
                           to={sub.path}
-                          style={{
+                          style={sub.img ? {
+                            fontSize: '0.9rem',
+                            padding: '0.65rem 0.75rem',
+                            minHeight: '48px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            borderRadius: '4px',
+                            transition: 'all 0.15s',
+                            ...(hoveredFellowship === `m${sIdx}`
+                              ? {
+                                  backgroundImage: `linear-gradient(rgba(11, 17, 32, 0.35), rgba(11, 17, 32, 0.75)), url(${sub.img})`,
+                                  backgroundSize: 'cover',
+                                  backgroundPosition: 'center',
+                                  color: '#fff'
+                                }
+                              : { color: 'var(--text-muted)' })
+                          } : {
                             color: 'var(--text-muted)',
                             fontSize: '0.9rem',
                             padding: '0.25rem 0'
                           }}
                           onClick={() => setIsOpen(false)}
+                          onTouchStart={sub.img ? () => setHoveredFellowship(`m${sIdx}`) : undefined}
+                          onMouseEnter={sub.img ? () => setHoveredFellowship(`m${sIdx}`) : undefined}
+                          onMouseLeave={sub.img ? () => setHoveredFellowship(null) : undefined}
                         >
                           {sub.name}
                         </Link>

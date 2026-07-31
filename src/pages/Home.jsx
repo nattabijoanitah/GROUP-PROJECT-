@@ -4,8 +4,9 @@ import { Play, ArrowRight, HeartHandshake, Calendar, ShieldCheck, Flame, Compass
 import { ministriesData, sermonsData } from '../data/churchData';
 
 // Image references
-import heroImg from '../assets/church_hero.png';
-import welcomeImg from '../assets/about_gathering.png';
+import heroImg from '../assets/about ihema.jpg';
+import welcomeImg from '../assets/about ihema.jpg';
+import sanctuaryImg from '../assets/image (1).png';
 
 export default function Home() {
   const [showPrayerModal, setShowPrayerModal] = useState(false);
@@ -38,17 +39,52 @@ export default function Home() {
       <section
         style={{
           position: 'relative',
-          backgroundImage: `linear-gradient(rgba(11, 17, 32, 0.85), rgba(11, 17, 32, 0.85)), url(${heroImg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
           height: 'calc(100vh - 80px)',
           minHeight: '600px',
           display: 'flex',
           alignItems: 'center',
-          color: 'var(--text-light)'
+          color: 'var(--text-light)',
+          overflow: 'hidden',
+          backgroundColor: '#0b1120'
         }}
       >
-        <div className="container" style={{ textAlign: 'center', maxWidth: '900px', zIndex: 2 }}>
+        {/* Background YouTube Video */}
+        <div
+          style={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            width: '100vw',
+            height: '56.25vw', // maintains 16:9 ratio based on viewport width
+            minHeight: '100%',
+            minWidth: '177.78vh', // maintains 16:9 ratio based on viewport height
+            transform: 'translate(-50%, -50%)',
+            zIndex: 0,
+            pointerEvents: 'none'
+          }}
+        >
+          <iframe
+            src="https://www.youtube.com/embed/VLtxJU9A3Uc?autoplay=1&mute=1&loop=1&playlist=VLtxJU9A3Uc&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3"
+            title="Background Video"
+            allow="autoplay; encrypted-media"
+            style={{ width: '100%', height: '100%', border: 'none' }}
+          />
+        </div>
+
+        {/* Dark overlay for text readability */}
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: 'rgba(11, 17, 32, 0.85)',
+            zIndex: 1
+          }}
+        />
+
+        <div className="container" style={{ textAlign: 'center', maxWidth: '900px', zIndex: 2, position: 'relative' }}>
           <span style={{ fontSize: '0.9rem', color: 'var(--accent-gold)', letterSpacing: '0.3em', textTransform: 'uppercase', fontWeight: 600, display: 'block', marginBottom: '1rem' }}>
             Welcome to Ihema Christian Fellowship International
           </span>
@@ -67,9 +103,9 @@ export default function Home() {
             </button>
           </div>
         </div>
-        
+
         {/* Scroll indicator micro-animation */}
-        <div style={{ position: 'absolute', bottom: '2rem', left: '50%', transform: 'translateX(-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem', opacity: 0.7 }}>
+        <div style={{ position: 'absolute', bottom: '2rem', left: '50%', transform: 'translateX(-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem', opacity: 0.7, zIndex: 2 }}>
           <span style={{ fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Scroll Down</span>
           <div style={{ width: '20px', height: '35px', borderRadius: '10px', border: '2px solid var(--text-light)', display: 'flex', padding: '4px' }}>
             <div style={{ width: '4px', height: '8px', borderRadius: '2px', backgroundColor: 'var(--accent-gold)' }} className="scroll-dot"></div>
@@ -85,7 +121,7 @@ export default function Home() {
             <div style={{ position: 'relative' }}>
               <div style={{ border: '2px solid var(--accent-gold)', borderRadius: '8px', overflow: 'hidden', padding: '0.5rem', backgroundColor: '#fff' }}>
                 <img
-                  src={welcomeImg}
+                  src={sanctuaryImg}
                   alt="Church sanctuary layout"
                   style={{ width: '100%', height: 'auto', borderRadius: '4px', display: 'block', objectFit: 'cover' }}
                 />
@@ -188,18 +224,69 @@ export default function Home() {
 
           <div className="grid-3">
             {featuredMinistries.map((min, idx) => (
-              <div key={idx} className="glass-card" style={{ overflow: 'hidden', display: 'flex', flexDirection: 'column', height: '100%' }}>
-                <div style={{ height: '180px', width: '100%', overflow: 'hidden' }}>
-                  <img src={min.image} alt={min.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <div
+                key={idx}
+                className="glass-card"
+                style={{
+                  overflow: 'hidden',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  height: '100%',
+                  border: '1px solid rgba(230, 200, 117, 0.25)'
+                }}
+              >
+                <div style={{
+                  height: '180px',
+                  width: '100%',
+                  overflow: 'hidden',
+                  backgroundColor: '#070b16'
+                }}>
+                  <img
+                    src={min.image}
+                    alt={min.name}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      transition: 'transform 0.4s ease'
+                    }}
+                    className="ministry-banner-img"
+                  />
                 </div>
-                <div style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
-                  <h3 style={{ fontFamily: 'var(--font-serif)', color: 'var(--accent-gold)', marginBottom: '0.75rem', fontSize: '1.35rem' }}>
+                <div style={{
+                  padding: '1.75rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  flex: 1
+                }}>
+                  <h3 style={{
+                    fontFamily: 'var(--font-serif)',
+                    color: 'var(--accent-gold)',
+                    marginBottom: '0.75rem',
+                    fontSize: '1.35rem',
+                    letterSpacing: '0.01em'
+                  }}>
                     {min.name}
                   </h3>
-                  <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginBottom: '1.5rem', flex: 1 }}>
+                  <p style={{
+                    fontSize: '0.9rem',
+                    color: 'var(--text-muted)',
+                    marginBottom: '1.5rem',
+                    flex: 1,
+                    lineHeight: 1.6
+                  }}>
                     {min.shortDesc}
                   </p>
-                  <Link to="/ministries" className="btn btn-secondary" style={{ padding: '0.5rem 1rem', fontSize: '0.85rem', width: 'fit-content' }}>
+                  <Link
+                    to="/ministries"
+                    className="btn btn-secondary"
+                    style={{
+                      padding: '0.6rem 1.25rem',
+                      fontSize: '0.85rem',
+                      width: 'fit-content',
+                      border: '2px solid var(--text-light)'
+                    }}
+                  >
                     Learn More
                   </Link>
                 </div>
@@ -234,37 +321,91 @@ export default function Home() {
 
           <div className="grid-3">
             {latestSermons.map((sermon, idx) => (
-              <div key={idx} className="light-card" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-                <div style={{ height: '180px', position: 'relative', overflow: 'hidden' }}>
-                  <img src={sermon.image} alt={sermon.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <div
+                key={idx}
+                className="light-card"
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  height: '100%',
+                  border: '1px solid rgba(0, 0, 0, 0.1)',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+                }}
+              >
+                <div style={{
+                  height: '180px',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  backgroundColor: '#f3f4f6'
+                }}>
+                  <img
+                    src={sermon.image}
+                    alt={sermon.title}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      transition: 'transform 0.4s ease'
+                    }}
+                    className="sermon-img"
+                  />
                   <Link
                     to="/sermons"
                     style={{
                       position: 'absolute',
-                      bottom: '1rem',
-                      right: '1rem',
-                      width: '40px',
-                      height: '40px',
+                      bottom: '1.25rem',
+                      right: '1.25rem',
+                      width: '45px',
+                      height: '45px',
                       borderRadius: '50%',
                       backgroundColor: 'var(--accent-gold)',
                       color: 'var(--bg-dark)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      boxShadow: 'var(--shadow-md)'
+                      boxShadow: '0 8px 20px rgba(230, 200, 117, 0.25)',
+                      transition: 'transform 0.3s ease',
+                      fontWeight: 'bold'
                     }}
+                    className="play-btn"
                   >
-                    <Play size={18} fill="currentColor" style={{ marginLeft: '2px' }} />
+                    <Play size={20} fill="currentColor" style={{ marginLeft: '2px' }} />
                   </Link>
                 </div>
-                <div style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
-                  <span style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', color: 'var(--accent-gold)', display: 'block', marginBottom: '0.5rem' }}>
+                <div style={{
+                  padding: '1.75rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  flex: 1
+                }}>
+                  <span style={{
+                    fontSize: '0.75rem',
+                    fontWeight: 700,
+                    textTransform: 'uppercase',
+                    color: 'var(--accent-gold)',
+                    display: 'block',
+                    marginBottom: '0.65rem',
+                    letterSpacing: '0.05em'
+                  }}>
                     {sermon.category} • {sermon.date}
                   </span>
-                  <h3 style={{ fontFamily: 'var(--font-serif)', color: 'var(--text-dark)', fontSize: '1.35rem', marginBottom: '0.75rem', flex: 1 }}>
+                  <h3 style={{
+                    fontFamily: 'var(--font-serif)',
+                    color: 'var(--text-dark)',
+                    fontSize: '1.35rem',
+                    marginBottom: '0.75rem',
+                    flex: 1,
+                    letterSpacing: '0.01em',
+                    lineHeight: 1.3
+                  }}>
                     {sermon.title}
                   </h3>
-                  <span style={{ fontSize: '0.85rem', color: 'var(--text-dark-muted)', borderTop: '1px solid #e5e7eb', paddingTop: '0.75rem' }}>
+                  <span style={{
+                    fontSize: '0.85rem',
+                    color: 'var(--text-dark-muted)',
+                    borderTop: '1px solid rgba(0, 0, 0, 0.08)',
+                    paddingTop: '0.85rem'
+                  }}>
                     By {sermon.preacher}
                   </span>
                 </div>

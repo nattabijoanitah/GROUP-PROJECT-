@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Search, Volume2, Share2, FileText, ArrowRight, Heart, Sparkles, BookOpen } from 'lucide-react';
 import { sermonsData } from '../data/churchData';
 import SermonPlayer from '../components/SermonPlayer';
-import heroImg from '../assets/sermons_hero.png';
+import heroImg from '../assets/about ihema.jpg';
 
 export default function Sermons() {
   const [activeSermon, setActiveSermon] = useState(sermonsData[0]);
@@ -187,21 +187,77 @@ export default function Sermons() {
                   window.scrollTo({ top: 350, behavior: 'smooth' });
                 }}
                 className="light-card"
-                style={{ cursor: 'pointer', display: 'flex', flexDirection: 'column', height: '100%' }}
+                style={{
+                  cursor: 'pointer',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  height: '100%',
+                  border: '1px solid rgba(0, 0, 0, 0.1)',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+                }}
               >
-                <div style={{ height: '180px', overflow: 'hidden' }}>
-                  <img src={sermon.image} alt={sermon.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <div style={{
+                  height: '180px',
+                  overflow: 'hidden',
+                  backgroundColor: '#f3f4f6'
+                }}>
+                  <img
+                    src={sermon.image}
+                    alt={sermon.title}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      transition: 'transform 0.4s ease'
+                    }}
+                    className="sermon-catalog-img"
+                  />
                 </div>
-                <div style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
-                  <span style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', color: 'var(--accent-gold)', display: 'block', marginBottom: '0.5rem' }}>
+                <div style={{
+                  padding: '1.75rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  flex: 1
+                }}>
+                  <span style={{
+                    fontSize: '0.75rem',
+                    fontWeight: 700,
+                    textTransform: 'uppercase',
+                    color: 'var(--accent-gold)',
+                    display: 'block',
+                    marginBottom: '0.65rem',
+                    letterSpacing: '0.05em'
+                  }}>
                     {sermon.category} • {sermon.date}
                   </span>
-                  <h3 style={{ fontFamily: 'var(--font-serif)', color: 'var(--text-dark)', fontSize: '1.3rem', marginBottom: '0.75rem', flex: 1 }}>
+                  <h3 style={{
+                    fontFamily: 'var(--font-serif)',
+                    color: 'var(--text-dark)',
+                    fontSize: '1.3rem',
+                    marginBottom: '0.75rem',
+                    flex: 1,
+                    letterSpacing: '0.01em',
+                    lineHeight: 1.3
+                  }}>
                     {sermon.title}
                   </h3>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid #e5e7eb', paddingTop: '0.75rem', fontSize: '0.85rem', color: 'var(--text-dark-muted)' }}>
+                  <div style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    borderTop: '1px solid rgba(0, 0, 0, 0.08)',
+                    paddingTop: '0.85rem',
+                    fontSize: '0.85rem',
+                    color: 'var(--text-dark-muted)'
+                  }}>
                     <span>By {sermon.preacher}</span>
-                    <span style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', color: 'var(--accent-gold)', fontWeight: 600 }}>
+                    <span style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.25rem',
+                      color: 'var(--accent-gold)',
+                      fontWeight: 700
+                    }}>
                       Listen <ArrowRight size={14} />
                     </span>
                   </div>

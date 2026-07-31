@@ -9,7 +9,7 @@ export const ministriesData = [
     leader: 'Pastor David Okoye',
     meetingTime: 'Tuesdays at 6:30 PM & Fridays at 9:00 PM',
     iconName: 'Flame',
-    image: '/src/assets/about_gathering.png' // Fallback to gathering image
+    image: '/src/assets/sacred.png' // Fallback to gathering image
   },
   {
     id: 'worship',
@@ -19,7 +19,7 @@ export const ministriesData = [
     leader: 'Sister Grace Temiloluwa',
     meetingTime: 'Saturdays at 4:00 PM (Rehearsals)',
     iconName: 'Music',
-    image: '/src/assets/church_hero.png'
+    image: '/src/assets/men ministry.png'
   },
   {
     id: 'youth',
@@ -29,7 +29,7 @@ export const ministriesData = [
     leader: 'Brother Caleb Johnson',
     meetingTime: 'Saturdays at 6:00 PM',
     iconName: 'Sparkles',
-    image: '/src/assets/about_gathering.png'
+    image: '/src/assets/youth.png'
   },
   {
     id: 'children',
@@ -39,7 +39,7 @@ export const ministriesData = [
     leader: 'Sister Sarah Mensah',
     meetingTime: 'Sundays at 9:00 AM & 11:00 AM',
     iconName: 'Baby',
-    image: '/src/assets/about_gathering.png'
+    image: '/src/assets/children ministry.png'
   },
   {
     id: 'women',
@@ -49,7 +49,7 @@ export const ministriesData = [
     leader: 'Pastor Mrs. Evelyn Ihema',
     meetingTime: 'First Saturday of every month at 10:00 AM',
     iconName: 'HeartHandshake',
-    image: '/src/assets/about_gathering.png'
+    image: '/src/assets/womens ministry.png'
   },
   {
     id: 'men',
@@ -59,7 +59,7 @@ export const ministriesData = [
     leader: 'Elder Joseph Mwangi',
     meetingTime: 'Second Saturday of every month at 8:00 AM',
     iconName: 'Shield',
-    image: '/src/assets/about_gathering.png'
+    image: '/src/assets/men ministry.png'
   },
   {
     id: 'marriage',
@@ -69,7 +69,7 @@ export const ministriesData = [
     leader: 'Deacon & Deaconess Alabi',
     meetingTime: 'Quarterly seminars',
     iconName: 'Heart',
-    image: '/src/assets/about_gathering.png'
+    image: '/src/assets/marriage .png'
   },
   {
     id: 'evangelism',
@@ -79,7 +79,7 @@ export const ministriesData = [
     leader: 'Pastor Emmanuel Cole',
     meetingTime: 'Saturdays at 11:00 AM (Outreach)',
     iconName: 'Compass',
-    image: '/src/assets/about_gathering.png'
+    image: '/src/assets/envagelism.jpg'
   },
   {
     id: 'discipleship',
@@ -89,7 +89,7 @@ export const ministriesData = [
     leader: 'Elder Timothy Chen',
     meetingTime: 'Sundays at 8:00 AM',
     iconName: 'BookOpen',
-    image: '/src/assets/about_gathering.png'
+    image: '/src/assets/sermons_hero.png'
   }
 ];
 
@@ -101,16 +101,15 @@ export const sermonsData = [
     date: 'July 19, 2026',
     category: 'Sermons',
     duration: '45 mins',
-    scripture: 'Isaiah 43:18-19',
-    audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3', // Functional open audio link
-    videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4', // Demo video
+   scripture: 'Isaiah 43:18-19',
+    youtubeId: 'VLtxJU9A3Uc', // Demo video
     notes: [
       'Forget the former things; do not dwell on the past.',
       'God is doing a new thing! It is springing forth even now.',
       'Divine renovation requires a change of mindset and submission to the Holy Spirit.',
       'Favor is not earned; it is a product of God\'s covenant and grace over your life.'
     ],
-    image: '/src/assets/sermons_hero.png'
+    image: '/src/assets/sermon.png'
   },
   {
     id: 'sermon-2',
@@ -120,15 +119,14 @@ export const sermonsData = [
     category: 'Sermons',
     duration: '52 mins',
     scripture: 'Hebrews 11:1-6',
-    audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
-    videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4',
+    youtubeId: '4gjFIlulqEM',
     notes: [
       'Faith is the substance of things hoped for, the evidence of things not seen.',
       'Without faith it is impossible to please God.',
       'Unshakable faith is tested in the valleys, not just built on the mountaintops.',
       'Guard your heart from doubt by constantly feeding on the Word of God.'
     ],
-    image: '/src/assets/church_hero.png'
+    image: '/src/assets/istry 2.jpg'
   },
   {
     id: 'sermon-3',
@@ -146,7 +144,7 @@ export const sermonsData = [
       'Corporate prayer multiplies spiritual authority and brings immediate angelic intervention.',
       'Do not neglect the assembly of the saints in prayer.'
     ],
-    image: '/src/assets/about_gathering.png'
+    image: '/src/assets/worship ministry.png'
   },
   {
     id: 'sermon-4',
@@ -164,7 +162,7 @@ export const sermonsData = [
       'Practical steps to establish daily family devotions.',
       'Overcoming the distractions of the modern digital age.'
     ],
-    image: '/src/assets/sermons_hero.png'
+    image: '/src/assets/ministry.png'
   },
   {
     id: 'sermon-5',
@@ -182,7 +180,7 @@ export const sermonsData = [
       'True worship demands a clean heart and a focused mind.',
       'The benefits of cultivating a personal sanctuary of praise.'
     ],
-    image: '/src/assets/church_hero.png'
+    image: '/src/assets/about ihema.jpg'
   }
 ];
 
@@ -195,7 +193,7 @@ export const eventsData = [
     location: 'Main Sanctuary & Online',
     description: 'A 3-day spiritual awakening with guest ministers, intensive prayers, and worship. Come expecting a refreshing in the Holy Ghost.',
     category: 'Conference',
-    banner: '/src/assets/church_hero.png'
+    banner: '/src/assets/congregation.jpg'
   },
   {
     id: 'event-2',
@@ -205,7 +203,7 @@ export const eventsData = [
     location: 'Grace Mountain Retreat Center',
     description: 'An outdoor camping event for teenagers and young adults focusing on fellowship, fun, team-building, and spiritual ignition.',
     category: 'Youth',
-    banner: '/src/assets/about_gathering.png'
+    banner: '/src/assets/youth ministry.png'
   },
   {
     id: 'event-3',
@@ -215,7 +213,7 @@ export const eventsData = [
     location: 'Main Sanctuary',
     description: 'Our monthly night vigil. Join us for apostolic prayers, deliverance sessions, and prophetic decrees as we cross into the new month.',
     category: 'Prayer Night',
-    banner: '/src/assets/sermons_hero.png'
+    banner: '/src/assets/image (3).png'
   },
   {
     id: 'event-4',
@@ -225,7 +223,7 @@ export const eventsData = [
     location: 'Grand Royal Banquet Hall',
     description: 'An elegant evening for married couples to connect, share experiences, and receive wisdom on building an unbreakable home. Registration required.',
     category: 'Marriage',
-    banner: '/src/assets/about_gathering.png'
+    banner: '/src/assets/marriage .png'
   }
 ];
 
@@ -261,14 +259,18 @@ export const testimoniesData = [
 ];
 
 export const galleryData = [
-  { id: 'gal-1', category: 'Services', title: 'Sunday Celebration Service', url: '/src/assets/church_hero.png' },
-  { id: 'gal-2', category: 'Services', title: 'Fervent Worship', url: '/src/assets/about_gathering.png' },
-  { id: 'gal-3', category: 'Community', title: 'Evangelism Outreach Group', url: '/src/assets/about_gathering.png' },
-  { id: 'gal-4', category: 'Fellowships', title: 'Youth Praise Session', url: '/src/assets/church_hero.png' },
-  { id: 'gal-5', category: 'Services', title: 'Laying of Hands and Prayer', url: '/src/assets/about_gathering.png' },
-  { id: 'gal-6', category: 'Community', title: 'Tithing and Offerings Service', url: '/src/assets/sermons_hero.png' },
-  { id: 'gal-7', category: 'Fellowships', title: 'Women\'s Prayer Breakfast', url: '/src/assets/about_gathering.png' },
-  { id: 'gal-8', category: 'Community', title: 'Medical Outreach Clinic', url: '/src/assets/church_hero.png' }
+  { id: 'gal-3', category: 'Services', title: 'Sacred Moments', url: '/src/assets/sacred.png' },
+  { id: 'gal-4', category: 'Services', title: 'Sermon Session', url: '/src/assets/sermons_hero.png' },
+  { id: 'gal-5', category: 'Community', title: 'Evangelism Outreach Group', url: '/src/assets/envagelism.jpg' },
+  { id: 'gal-6', category: 'Community', title: 'Congregation Gathering', url: '/src/assets/congregation.jpg' },
+  { id: 'gal-7', category: 'Community', title: 'Camping Outreach', url: '/src/assets/camping .png' },
+  { id: 'gal-9', category: 'Fellowships', title: 'Men\'s Fellowship', url: '/src/assets/men ministry.png' },
+  { id: 'gal-10', category: 'Fellowships', title: 'Women\'s Fellowship', url: '/src/assets/womens ministry.png' },
+  { id: 'gal-11', category: 'Fellowships', title: 'Youth Fellowship', url: '/src/assets/youth ministry.png' },
+  { id: 'gal-12', category: 'Fellowships', title: 'Children\'s Fellowship', url: '/src/assets/children ministry.png' },
+  { id: 'gal-13', category: 'Fellowships', title: 'Worship Team Fellowship', url: '/src/assets/worship ministry.png' },
+  { id: 'gal-14', category: 'Fellowships', title: 'Prayer Fellowship', url: '/src/assets/prayer ministry.jpg' },
+  { id: 'gal-15', category: 'Fellowships', title: 'Marriage Fellowship', url: '/src/assets/marriage .png' }
 ];
 
 export const fellowshipsData = {

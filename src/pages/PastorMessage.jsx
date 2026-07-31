@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { BookOpen, Quote, Mic, ArrowRight } from 'lucide-react';
-import pastorImg from '../assets/pastor_welcome.png';
-import heroImg from '../assets/church_hero.png';
+import pastorImg from '../assets/prayer ministry.jpg';
+import heroImg from '../assets/about ihema.jpg';
 
 const messages = [
   {

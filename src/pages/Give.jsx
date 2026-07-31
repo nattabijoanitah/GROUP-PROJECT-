@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { CreditCard, ShieldCheck, Heart, Sparkles, Building, Landmark, Check } from 'lucide-react';
-import heroImg from '../assets/sermons_hero.png';
+import heroImg from '../assets/about ihema.jpg';
 
 export default function Give() {
   const [amount, setAmount] = useState('50');

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Flame, Music, Sparkles, Baby, HeartHandshake, Shield, Heart, Compass, BookOpen, Clock, User, X, Check } from 'lucide-react';
 import { ministriesData } from '../data/churchData';
-import heroImg from '../assets/church_hero.png';
+import heroImg from '../assets/about ihema.jpg';
 
 // Icon mapper helper
 const IconMap = {
@@ -75,45 +75,91 @@ export default function Ministries() {
                 <div
                   key={idx}
                   className="glass-card"
-                  style={{ display: 'flex', flexDirection: 'column', height: '100%', overflow: 'hidden' }}
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    height: '100%',
+                    overflow: 'hidden',
+                    border: '1px solid rgba(230, 200, 117, 0.25)',
+                  }}
                 >
                   {/* Photo Banner */}
-                  <div style={{ height: '150px', width: '100%', position: 'relative' }}>
-                    <img src={min.image} alt={min.name} style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.8 }} />
+                  <div style={{
+                    height: '160px',
+                    width: '100%',
+                    position: 'relative',
+                    overflow: 'hidden'
+                  }}>
+                    <img
+                      src={min.image}
+                      alt={min.name}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        opacity: 0.85,
+                        transition: 'transform 0.4s ease'
+                      }}
+                      className="ministry-banner-img"
+                    />
                     {/* Icon Circle overlay */}
                     <div
                       style={{
                         position: 'absolute',
-                        bottom: '-20px',
+                        bottom: '-22px',
                         left: '1.5rem',
-                        width: '45px',
-                        height: '45px',
+                        width: '50px',
+                        height: '50px',
                         borderRadius: '50%',
                         backgroundColor: 'var(--accent-gold)',
                         color: 'var(--bg-dark)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        boxShadow: 'var(--shadow-md)',
-                        zIndex: 2
+                        boxShadow: '0 8px 20px rgba(230, 200, 117, 0.25)',
+                        zIndex: 2,
+                        fontWeight: 'bold'
                       }}
                     >
-                      <MinistryIcon size={20} />
+                      <MinistryIcon size={22} />
                     </div>
                   </div>
 
                   {/* Body */}
-                  <div style={{ padding: '2rem 1.5rem 1.5rem 1.5rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
-                    <h3 style={{ fontFamily: 'var(--font-serif)', color: 'var(--accent-gold)', fontSize: '1.35rem', marginBottom: '0.75rem', marginTop: '0.5rem' }}>
+                  <div style={{
+                    padding: '2.25rem 1.75rem 1.75rem 1.75rem',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    flex: 1
+                  }}>
+                    <h3 style={{
+                      fontFamily: 'var(--font-serif)',
+                      color: 'var(--accent-gold)',
+                      fontSize: '1.4rem',
+                      marginBottom: '0.75rem',
+                      marginTop: '0.5rem',
+                      letterSpacing: '0.02em'
+                    }}>
                       {min.name}
                     </h3>
-                    <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginBottom: '1.5rem', flex: 1 }}>
+                    <p style={{
+                      fontSize: '0.9rem',
+                      color: 'var(--text-muted)',
+                      marginBottom: '1.75rem',
+                      flex: 1,
+                      lineHeight: 1.6
+                    }}>
                       {min.shortDesc}
                     </p>
                     <button
                       onClick={() => setSelectedMinistry(min)}
                       className="btn btn-secondary"
-                      style={{ padding: '0.5rem 1rem', fontSize: '0.85rem', width: '100%' }}
+                      style={{
+                        padding: '0.65rem 1.25rem',
+                        fontSize: '0.85rem',
+                        width: '100%',
+                        border: '2px solid var(--text-light)'
+                      }}
                     >
                       Learn More & Join
                     </button>

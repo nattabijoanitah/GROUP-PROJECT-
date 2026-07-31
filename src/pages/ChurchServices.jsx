@@ -1,7 +1,7 @@
 import React from 'react';
 import { Clock, Calendar, MapPin, ChevronRight, Radio, Laptop, Users } from 'lucide-react';
 import heroImg from '../assets/church_hero.png';
-import gatheringImg from '../assets/about_gathering.png';
+import gatheringImg from "../assets/congregation.jpg";
 
 const services = [
   {
@@ -173,7 +173,7 @@ export default function ChurchServices() {
                 <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
                   <div style={{ color: 'var(--accent-gold)', flexShrink: 0 }}><Laptop size={22} /></div>
                   <span style={{ color: 'var(--text-dark-muted)', fontSize: '0.9rem' }}>
-                    <strong>YouTube:</strong> youtube.com/@IhemaFellowship (Live on Sundays)
+                    <strong>YouTube:</strong> <a href="https://www.youtube.com/@ihemachristianfellowship2308" target="_blank" rel="noopener noreferrer">https://www.youtube.com/@ihemachristianfellowship2308</a> (Live on Sundays)
                   </span>
                 </div>
                 <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>

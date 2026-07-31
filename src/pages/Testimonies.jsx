@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { testimoniesData } from '../data/churchData';
 import TestimonialCard from '../components/TestimonialCard';
 import { MessageSquare, Check, Sparkles } from 'lucide-react';
-import heroImg from '../assets/church_hero.png';
+import heroImg from '../assets/about ihema.jpg';
 
 export default function Testimonies() {
   const [testimonies, setTestimonies] = useState(testimoniesData);

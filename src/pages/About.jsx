@@ -1,7 +1,10 @@
 import React from 'react';
-import logoImg from '../assets/logo_gold.png';
-import gatheringImg from '../assets/about_gathering.png';
-import pastorImg from '../assets/pastor_welcome.png';
+import logoImg from '../assets/ark2-removebg-preview.png';
+import gatheringImg from "../assets/about ihema.jpg";
+// import gatheringImg from "../assets/about us .jpeg";
+import pastorImg from '../assets/prayer ministry.jpg';
+import worshipMinistryImg from '../assets/worship ministry.png';
+import sacredImg from '../assets/sacred.png';
 import { ShieldAlert, Eye, Target, Sparkles, BookOpen, Heart, Flame } from 'lucide-react';
 
 export default function About() {
@@ -9,14 +12,31 @@ export default function About() {
     <div className="fade-in" style={{ paddingTop: '80px' }}>
       {/* 1. Branding Header */}
       <section style={{ backgroundColor: '#070b16', padding: '4rem 0 3rem 0', textAlign: 'center', borderBottom: '1px solid var(--border-color)' }}>
-        <div className="container" style={{ maxWidth: '800px' }}>
+        <div className="container" style={{ maxWidth: '900px' }}>
           <img src={logoImg} alt="Ihema Gold Crest Logo" style={{ height: '120px', width: 'auto', marginBottom: '1.5rem' }} />
           <h2 style={{ fontFamily: 'var(--font-serif)', color: 'var(--accent-gold)', textTransform: 'uppercase', fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>
             Ihema Christian Fellowship International
           </h2>
-          <span style={{ fontSize: '0.9rem', color: 'var(--text-light)', letterSpacing: '0.2em', textTransform: 'uppercase', opacity: 0.8 }}>
-            A Sanctuary of Faith, Family, and Restoration
-          </span>
+          <div style={{ color: 'var(--text-light)', maxWidth: '820px', margin: '0 auto', textAlign: 'left' }}>
+            <p style={{ marginBottom: '1rem', color: 'var(--text-light)' }}>
+              The name <strong>Ihema</strong> means “A tent”, representing a place of gathering, shelter, comfort, and fellowship. Biblically, a tent is a symbol of God’s presence among His people, a place where people meet with God, receive His guidance, and experience His comfort and protection. In the Bible, the tent of meeting was a place where God met with His people (Exodus 33:7-11), reminding us that God desires to dwell among us and bring hope, healing, and restoration.
+            </p>
+            <p style={{ marginBottom: '1rem', color: 'var(--text-light)' }}>
+              Ihema Christian Fellowship International is a Christ-centered ministry committed to preaching the Gospel of Jesus Christ, transforming lives, and building a community of believers rooted in faith, love, and the Word of God.
+            </p>
+            <p style={{ marginBottom: '1rem', color: 'var(--text-light)' }}>
+              We exist to provide a spiritual home where people from all walks of life can come, encounter God, find comfort, grow in faith, and experience the love of Christ. Through preaching the Gospel, evangelism, discipleship, baptism, worship, and teaching Christian faith, we guide people into a deeper relationship with Jesus Christ.
+            </p>
+            <p style={{ marginBottom: '1rem', color: 'var(--text-light)' }}>
+              At Ihema Christian Fellowship International, we believe that baptism is an important step of faith where believers publicly declare their commitment to Jesus Christ. We welcome and encourage people to receive baptism, grow spiritually, and become faithful disciples who reflect Christ in their daily lives.
+            </p>
+            <p style={{ marginBottom: '1rem', color: 'var(--text-light)' }}>
+              We also serve families and individuals by promoting Christian marriages, helping those who are preparing for marriage to build Godly relationships, and assisting couples who have not yet had a wedding to formalize their marriages through Christian wedding ceremonies.
+            </p>
+            <p style={{ marginBottom: '0.5rem', color: 'var(--text-light)' }}>
+              Through prayer, worship, fellowship, and outreach, Ihema Christian Fellowship International seeks to be a place of refuge where the weary find encouragement, the broken find restoration, and everyone can experience the presence and love of God.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -33,10 +53,10 @@ export default function About() {
                 ABOUT IHEMA
               </h2>
               <p style={{ color: 'var(--text-dark-muted)', marginBottom: '1.25rem' }}>
-                Founded with a strong mandate to preach the uncompromised Word of God, Ihema Christian Fellowship International has grown from a small family prayer group into a thriving global assembly. We are centered on family restoration, spiritual alignment, and raising dedicated workers for the vineyard of God.
+                We exist to provide a spiritual home where people from all walks of life can come, encounter God, find comfort, grow in faith, and experience the love of Christ. Through preaching the Gospel, evangelism, discipleship, baptism, worship, and teaching Christian faith, we guide people into a deeper relationship with Jesus Christ.
               </p>
               <p style={{ color: 'var(--text-dark-muted)', marginBottom: '1.5rem' }}>
-                Our services are anchored on the Holy Scriptures, and we invite people of all nations, backgrounds, and ages to experience the life-changing power of Jesus Christ.
+                At Ihema Christian Fellowship International, we believe that baptism is an important step of faith where believers publicly declare their commitment to Jesus Christ. We welcome and encourage people to receive baptism, grow spiritually, and become faithful disciples who reflect Christ in their daily lives.
               </p>
               
               <div style={{ display: 'flex', gap: '1rem', border: '1px solid rgba(0,0,0,0.1)', padding: '1rem', borderRadius: '4px', backgroundColor: '#f9f9f9', marginTop: '1.5rem' }}>
@@ -50,7 +70,7 @@ export default function About() {
             {/* Image Right */}
             <div>
               <img
-                src={gatheringImg}
+                src={worshipMinistryImg}
                 alt="Church community worship service"
                 style={{ width: '100%', height: 'auto', borderRadius: '8px', border: '1px solid rgba(0,0,0,0.1)', boxShadow: 'var(--shadow-md)' }}
               />
@@ -66,7 +86,7 @@ export default function About() {
             “
           </span>
           <p style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', color: 'var(--text-light)', fontStyle: 'italic', letterSpacing: '0.02em', marginBottom: '1.5rem', lineHeight: '1.4' }}>
-            OUR DESIRE IS TO SEE LIVES TRANSFORMED BY THE GOSPEL, FAMILIES STRENGTHENED, AND COMMUNITIES CHANGED THROUGH THE POWER OF JESUS CHRIST.
+            Our desire is to see lives transformed by the Gospel, families strengthened, and communities changed through the power of Jesus Christ.
           </p>
           <span style={{ fontSize: '5rem', lineHeight: '1', fontFamily: 'var(--font-serif)', color: 'var(--accent-gold)', display: 'block', height: '40px' }}>
             ”
@@ -79,25 +99,97 @@ export default function About() {
         <div className="container">
           <div className="grid-2">
             {/* Vision */}
-            <div className="glass-card" style={{ padding: '3rem 2rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-              <div style={{ width: '60px', height: '60px', borderRadius: '50%', backgroundColor: 'rgba(230, 200, 117, 0.1)', display: 'flex', alignItems: 'center', justifyContainer: 'center', border: '1px solid var(--border-color)', justifyContent: 'center' }}>
-                <Eye size={28} className="text-gold" />
+            <div
+              className="glass-card"
+              style={{
+                padding: '2.5rem',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '1.5rem',
+                border: '1px solid rgba(230, 200, 117, 0.25)'
+              }}
+            >
+              <div
+                style={{
+                  width: '65px',
+                  height: '65px',
+                  borderRadius: '50%',
+                  backgroundColor: 'rgba(230, 200, 117, 0.15)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  border: '2px solid rgba(230, 200, 117, 0.4)',
+                }}
+              >
+                <Eye size={32} className="text-gold" />
               </div>
-              <h3 style={{ fontFamily: 'var(--font-serif)', color: 'var(--accent-gold)' }}>OUR VISION</h3>
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>
-                To raise a generational congregation of spirit-filled, biblically-grounded believers who shine the light of the gospel, dominate their career paths with integrity, and lead families into spiritual restoration.
-              </p>
+              <div>
+                <h3
+                  style={{
+                    fontFamily: 'var(--font-serif)',
+                    color: 'var(--accent-gold)',
+                    fontSize: '1.25rem',
+                    marginBottom: '0.75rem',
+                    letterSpacing: '0.05em'
+                  }}
+                >
+                  OUR VISION
+                </h3>
+                <p style={{
+                  color: 'var(--text-muted)',
+                  fontSize: '0.95rem',
+                  lineHeight: 1.7
+                }}>
+                  "To become a Christ-centered ministry that transforms lives by spreading the Gospel, guiding people into Christian faith, baptizing believers, discipling communities, and restoring the sanctity of marriage by helping couples receive Christian blessings and encouraging godly unions."
+                </p>
+              </div>
             </div>
 
             {/* Mission */}
-            <div className="glass-card" style={{ padding: '3rem 2rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-              <div style={{ width: '60px', height: '60px', borderRadius: '50%', backgroundColor: 'rgba(230, 200, 117, 0.1)', display: 'flex', alignItems: 'center', justifyContainer: 'center', border: '1px solid var(--border-color)', justifyContent: 'center' }}>
-                <Target size={28} className="text-gold" />
+            <div
+              className="glass-card"
+              style={{
+                padding: '2.5rem',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '1.5rem',
+                border: '1px solid rgba(230, 200, 117, 0.25)'
+              }}
+            >
+              <div
+                style={{
+                  width: '65px',
+                  height: '65px',
+                  borderRadius: '50%',
+                  backgroundColor: 'rgba(230, 200, 117, 0.15)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  border: '2px solid rgba(230, 200, 117, 0.4)',
+                }}
+              >
+                <Target size={32} className="text-gold" />
               </div>
-              <h3 style={{ fontFamily: 'var(--font-serif)', color: 'var(--accent-gold)' }}>OUR MISSION</h3>
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>
-                To passionately reach out to the unsaved, make disciples through rigorous scriptural teaching, nurture strong marriages, support community health, and cultivate platforms for expressive praise and worship.
-              </p>
+              <div>
+                <h3
+                  style={{
+                    fontFamily: 'var(--font-serif)',
+                    color: 'var(--accent-gold)',
+                    fontSize: '1.25rem',
+                    marginBottom: '0.75rem',
+                    letterSpacing: '0.05em'
+                  }}
+                >
+                  OUR MISSION
+                </h3>
+                <p style={{
+                  color: 'var(--text-muted)',
+                  fontSize: '0.95rem',
+                  lineHeight: 1.7
+                }}>
+                  "To proclaim the Gospel of Jesus Christ by providing prayer and deliverance, promoting Christian education and discipleship, strengthening families, offering counselling and reconciliation, empowering communities through literacy and development programmes, and serving people with compassion to improve their spiritual, social, and economic well-being."
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -110,7 +202,7 @@ export default function About() {
             {/* Image Left */}
             <div>
               <img
-                src={gatheringImg}
+                src={sacredImg}
                 alt="Pastors offering prayers and laying hands"
                 style={{ width: '100%', height: 'auto', borderRadius: '8px', boxShadow: 'var(--shadow-md)' }}
               />

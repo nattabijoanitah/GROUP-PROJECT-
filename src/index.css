@@ -105,34 +105,37 @@ button, input, select, textarea {
 }
 
 .section-padding {
-  padding: clamp(4rem, 8vw, 8rem) 0;
+  padding: clamp(5rem, 10vw, 8rem) 0;
 }
 
 .grid-2 {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
+  gap: 4rem;
   align-items: center;
 }
 
 .grid-3 {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 @media (min-width: 768px) {
   .grid-2 {
     grid-template-columns: repeat(2, 1fr);
+    gap: 3.5rem;
   }
   .grid-3 {
     grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
   }
 }
 
 @media (min-width: 1024px) {
   .grid-3 {
     grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
   }
 }
 
@@ -141,50 +144,53 @@ button, input, select, textarea {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 1.75rem;
-  font-size: 0.95rem;
-  font-weight: 600;
+  padding: 0.85rem 2rem;
+  font-size: 0.9rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border-radius: 4px;
+  letter-spacing: 0.08em;
+  border-radius: 6px;
   cursor: pointer;
   transition: all var(--transition-normal);
-  border: 1px solid transparent;
+  border: 2px solid transparent;
 }
 
 .btn-primary {
   background-color: var(--accent-gold);
   color: var(--bg-dark);
+  font-weight: 700;
 }
 
 .btn-primary:hover {
   background-color: var(--accent-gold-hover);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-gold);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(230, 200, 117, 0.25);
 }
 
 .btn-secondary {
   background-color: transparent;
   color: var(--text-light);
-  border-color: var(--text-light);
+  border: 2px solid var(--text-light);
+  font-weight: 600;
 }
 
 .btn-secondary:hover {
   background-color: var(--text-light);
   color: var(--bg-dark);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
 .btn-dark {
-  background-color: var(--bg-dark);
+  background-color: transparent;
   color: var(--accent-gold);
-  border-color: var(--accent-gold);
+  border: 2px solid var(--accent-gold);
+  font-weight: 600;
 }
 
 .btn-dark:hover {
   background-color: var(--accent-gold);
   color: var(--bg-dark);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
 /* Glassmorphism & Cards */
@@ -192,15 +198,17 @@ button, input, select, textarea {
   background: rgba(19, 28, 49, 0.7);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(230, 200, 117, 0.3);
   border-radius: 8px;
   transition: all var(--transition-normal);
+  padding: 0;
 }
 
 .glass-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
   border-color: var(--accent-gold);
-  box-shadow: var(--shadow-gold);
+  box-shadow: 0 15px 40px rgba(230, 200, 117, 0.2);
+  background: rgba(19, 28, 49, 0.85);
 }
 
 /* Light Section Cards */
@@ -215,23 +223,23 @@ button, input, select, textarea {
 }
 
 .light-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
-  border-color: rgba(230, 200, 117, 0.4);
+  border-color: rgba(230, 200, 117, 0.3);
 }
 
 /* Form Styles */
 .form-group {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .form-group label {
   display: block;
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.5rem;
+  letter-spacing: 0.08em;
+  margin-bottom: '0.65rem';
   color: var(--accent-gold);
 }
 
@@ -241,29 +249,32 @@ button, input, select, textarea {
 
 .form-control {
   width: 100%;
-  padding: 0.85rem 1rem;
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border-color);
+  padding: 0.9rem 1.15rem;
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(230, 200, 117, 0.25);
   color: var(--text-light);
-  border-radius: 4px;
+  border-radius: 6px;
   outline: none;
-  transition: border-color var(--transition-fast);
+  transition: all var(--transition-fast);
+  font-size: 0.95rem;
 }
 
 .form-control:focus {
   border-color: var(--accent-gold);
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 0 3px rgba(230, 200, 117, 0.1);
 }
 
 .form-control.light-input {
-  background-color: #f3f4f6;
-  border-color: var(--border-color-light);
+  background-color: #ffffff;
+  border-color: rgba(0, 0, 0, 0.12);
   color: var(--text-dark);
 }
 
 .form-control.light-input:focus {
   border-color: var(--accent-gold);
   background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(230, 200, 117, 0.08);
 }
 
 /* Layout Blocks */
@@ -314,4 +325,41 @@ button, input, select, textarea {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-gold);
+}
+
+/* Component-specific hover effects */
+.glass-card:hover .ministry-banner-img {
+  transform: scale(1.08);
+}
+
+.glass-card:hover .event-banner-img {
+  transform: scale(1.05);
+}
+
+.light-card:hover .sermon-img {
+  transform: scale(1.05);
+}
+
+.light-card:hover .play-btn {
+  transform: scale(1.1);
+}
+
+.light-card:hover .sermon-catalog-img {
+  transform: scale(1.05);
+}
+
+.glass-card:hover .gallery-img {
+  transform: scale(1.08);
+}
+
+.glass-card:hover .gallery-overlay {
+  opacity: 1 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

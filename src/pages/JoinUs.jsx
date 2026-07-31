@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Clock, Check, User, HeartHandshake } from 'lucide-react';
-import heroImg from '../assets/about_gathering.png';
+import heroImg from '../assets/about ihema.jpg';
 
 export default function JoinUs() {
   const [activeForm, setActiveForm] = useState('membership'); // 'membership', 'volunteer', 'contact'
@@ -95,7 +95,7 @@ export default function JoinUs() {
               <div style={{ color: 'var(--accent-gold)', marginBottom: '1rem' }}><MapPin size={28} /></div>
               <h3 style={{ fontFamily: 'var(--font-serif)', color: 'var(--text-dark)', marginBottom: '1rem', fontSize: '1.35rem' }}>Main Sanctuary</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--text-dark-muted)', marginBottom: '1rem', lineHeight: 1.6 }}>
-                123 Faith Avenue, Restoration City, RC 84210
+                Ntebetebe, Bweyogerere, Wakiso District, Uganda
               </p>
               <span style={{ fontSize: '0.8rem', color: 'var(--accent-gold)', fontWeight: 600 }}>Get Directions in Google Maps</span>
             </div>
@@ -105,10 +105,10 @@ export default function JoinUs() {
               <div style={{ color: 'var(--accent-gold)', marginBottom: '1rem' }}><Phone size={28} /></div>
               <h3 style={{ fontFamily: 'var(--font-serif)', color: 'var(--text-dark)', marginBottom: '1rem', fontSize: '1.35rem' }}>General Contacts</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--text-dark-muted)', marginBottom: '0.5rem' }}>
-                <strong>Phone:</strong> +1 (234) 567-8900
+                <strong>Phone:</strong> +0705 109 975
               </p>
               <p style={{ fontSize: '0.9rem', color: 'var(--text-dark-muted)', marginBottom: '0.5rem' }}>
-                <strong>Email:</strong> office@ihemafellowship.org
+                <strong>Email:</strong> ihemacfl018@gmail.com
               </p>
               <p style={{ fontSize: '0.9rem', color: 'var(--text-dark-muted)' }}>
                 <strong>Counseling Hours:</strong> Wed & Thurs 10am - 3pm
