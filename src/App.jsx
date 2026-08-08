@@ -71,6 +71,7 @@ function PublicLayout() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/testimonies" element={<Testimonies />} />
           <Route path="/join-us" element={<JoinUs />} />
+          <Route path="/join" element={<JoinUs />} />
           <Route path="/give" element={<Give />} />
           <Route path="/pastor" element={<PastorMessage />} />
           <Route path="/services" element={<ChurchServices />} />
