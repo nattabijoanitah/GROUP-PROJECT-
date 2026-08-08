@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Play, ArrowRight, HeartHandshake, Calendar, MapPin, Quote } from 'lucide-react';
 import { ministriesData, sermonsData, eventsData, testimoniesData } from '../data/churchData';
-
+import.meta.env.VITE_API_URL || 'http://127.0.0.1:5000'
 // Image references
 import pastorImg from '../assets/prayer-ministry.jpg';
 
